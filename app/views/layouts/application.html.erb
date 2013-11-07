@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rateyourday</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#"></a></li>
+				<li><a href="#">Rate your day</a></li>
+				<li><a href="#">Statistieken</a></li>
+				<li><a href="#">Verslagen</a></li>
+				<% if user_signed_in? %>
+				<li><%= current_user.first_name %>
+
+				<ul>
+					<li><%= link_to "Mijn profiel", profile_show_path %></li>
+					<li><a href="#">Help</a></li>
+					<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
+				</ul>
+
+				<% else %>
+				<%= link_to "inloggen", new_user_session_path %>
+				<% end %>
+				</li>
+			</ul>
+		</nav>
+			
+	</header>
+	<div id="user_nav">
+		<% if user_signed_in? %>
+		Ingelogd als <%= current_user.first_name + " " +current_user.last_name %>. 
+		<%= link_to "Log uit", destroy_user_session_path, :method => :delete %>
+		<%= link_to "Wijzig profiel", edit_user_registration_path %>
+		<% else %>
+		<%= link_to "Registreren", new_user_registration_path %> of <%= link_to "inloggen", new_user_session_path %>
+		<% end %>
+	</div>
+
+<% flash.each do |name, msg| %>
+	<%= content_tag :div, msg, :id => "flash_#{name}" %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

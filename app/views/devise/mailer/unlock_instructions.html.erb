@@ -1,0 +1,7 @@
+<p>Hallo <%= @resource.email %>!</p>
+
+<p>Je account is geblokkeerd doordat er te vaak is geprobeerd in te loggen.</p>
+
+<p>Klik op onderstaande link om je account te ontgrendelen:</p>
+
+<p><%= link_to 'Ontgrendel mijn account', unlock_url(@resource, :unlock_token => @token) %></p>
