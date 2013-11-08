@@ -35,7 +35,6 @@
 		<% if user_signed_in? %>
 		Ingelogd als <%= current_user.first_name + " " +current_user.last_name %>. 
 		<%= link_to "Log uit", destroy_user_session_path, :method => :delete %>
-		<%= link_to "Wijzig profiel", edit_user_registration_path %>
 		<% else %>
 		<%= link_to "Registreren", new_user_registration_path %> of <%= link_to "inloggen", new_user_session_path %>
 		<% end %>
