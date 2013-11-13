@@ -28,6 +28,7 @@
   <%=  f.text_field :place, :placeholder => 'Woonplaats' %>
 </div>
 
+
 <div>
   <%= f.date_select :birthday, :start_year => Time.now.year - 67, :end_year => Time.now.year - 16, :order => [:day, :month, :year] %>
 </div>
@@ -47,6 +48,7 @@
 
   <div>
     <%=  f.text_field :employment, :placeholder => 'Bedrijfsnaam' %>
+
     <%=  f.text_field :work_location, :placeholder => 'Werk locatie' %>
   </div>
 
