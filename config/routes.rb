@@ -1,4 +1,5 @@
 Rateyourday::Application.routes.draw do
+  get "dashboard/rateyourday"
   get "profile/show"
   devise_for :users
   resources :dashboard

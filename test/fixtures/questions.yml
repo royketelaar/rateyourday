@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  scale_id: 1
+  question: MyString
+
+two:
+  scale_id: 1
+  question: MyString
