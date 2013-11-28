@@ -1,0 +1,2 @@
+class RateyourdayController < ApplicationController
+end

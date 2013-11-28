@@ -18,7 +18,7 @@
 				<li><%= current_user.first_name %>
 
 				<ul>
-					<li><%= link_to "Mijn profiel", profile_show_path %></li>
+					<li><%= link_to "Mijn profiel", profile_path %></li>
 					<li><a href="#">Help</a></li>
 					<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
 				</ul>
