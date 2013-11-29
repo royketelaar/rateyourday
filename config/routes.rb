@@ -1,8 +1,13 @@
 Rateyourday::Application.routes.draw do
+<<<<<<< HEAD
   match '/profile', to: "profile#show", via: 'get'
   match '/rateyourday', to: "dashboard#rateyourday", via: 'get'
   match '/statistics', to: "dashboard#statistics", via: 'get'
 
+=======
+  get "dashboard/rateyourday"
+  get "profile/show"
+>>>>>>> 0e5f5a0b9a276c37f3744f49bec22fa8e58b4d3c
   devise_for :users
   resources :dashboard
 
