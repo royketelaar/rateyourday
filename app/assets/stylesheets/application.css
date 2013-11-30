@@ -40,7 +40,7 @@ body {
 header {
 	background-color: rgb(21, 27, 31);
 	width:auto;
-	height: 50px;
+	height: auto;
 }
 
 ul ul {
@@ -55,6 +55,7 @@ ul li {
 ul {
 	float: right;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 	display: inline-block;
 }
@@ -64,7 +65,7 @@ ul li:hover > ul {
 }
 
 ul:after {
-        content: ""; clear: both; display: block;
+	content: ""; clear: both; display: block;
 }
 
 #logo a {
@@ -74,11 +75,15 @@ ul:after {
 	font-weight: normal;
 	color: white;
 	text-decoration: none;
-	margin-right: 20px;
 	border-right-color: rgb(68, 68, 68);
 	border-right-style: solid;
 	border-right-width: 1px;
-	line-height: 20px;
+	padding: 15px 25px 15px 0px;
+	display: inline-block;
+}
+
+ul li a {
+	font-family: 'helvetica neue', sans-serif;
 }
 
 
