@@ -68,6 +68,14 @@ ul:after {
 	content: ""; clear: both; display: block;
 }
 
+ul li {
+	display: inline-block;
+	border-right-color: rgb(68, 68, 68);
+	border-right-style: solid;
+	border-right-width: 1px;
+	padding: 15px 25px 15px 0px;
+}
+
 #logo a {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Lobster', cursive;
@@ -75,19 +83,15 @@ ul:after {
 	font-weight: normal;
 	color: white;
 	text-decoration: none;
-	border-right-color: rgb(68, 68, 68);
-	border-right-style: solid;
-	border-right-width: 1px;
-	padding: 15px 25px 15px 0px;
-	display: inline-block;
 }
 
 ul li a {
+	-webkit-font-smoothing: antialiased;
 	font-family: 'helvetica neue', sans-serif;
-	font-size: 16px;
-	font-weight: bold;
+	font-size: 11pt;
+	font-weight: 700;
 	text-decoration: none;
-	line-height: 20px;
+	color: rgb(190, 190, 190);
 }
 
 
