@@ -40,7 +40,7 @@ body {
 header {
 	background-color: rgb(21, 27, 31);
 	width:auto;
-	height: auto;
+	height: 50px;
 }
 
 ul ul {
@@ -84,6 +84,10 @@ ul:after {
 
 ul li a {
 	font-family: 'helvetica neue', sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 20px;
 }
 
 
