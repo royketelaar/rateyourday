@@ -12,88 +12,73 @@
  *= require_tree .
  */
 
+div.layout-978 { width: 978px; margin: 0px auto; }
 
-/*CSS RESET*/
+div.row { height: 1%; }
+div.row-end { clear: both; font: 1px/1px sans-serif; height: 1px; overflow: hidden; }
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
+div.col1, div.col2, div.col3, div.col4, div.col5, div.col6, div.col7, div.col8, div.col9, div.col10, div.col11, div.col12 { float: left; margin-left: 30px; }
+div.col1:first-child, div.col2:first-child, div.col3:first-child, div.col4:first-child, div.col5:first-child, div.col6:first-child, div.col7:first-child, div.col8:first-child, div.col9:first-child, div.col10:first-child, div.col11:first-child, div.col12:first-child { margin-left: 0px; }
+div.col1 { width: 54px; }
+div.col2 { width: 138px; }
+div.col3 { width: 222px; }
+div.col4 { width: 306px; }
+div.col5 { width: 390px; }
+div.col6 { width: 474px; }
+div.col7 { width: 558px; }
+div.col8 { width: 642px; }
+div.col9 { width: 726px; }
+div.col10 { width: 810px; }
+div.col11 { width: 894px; }
+div.col12 { width: 978px; }
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
 body {
-	line-height: 1;
+	margin: 0;
 }
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-/*END CSS RESET*/
 
-
-
+/* header */
 header {
-	background-color: gray;
+	background-color: rgb(21, 27, 31);
 	width:auto;
-	height: 100px;
+	height: 50px;
 }
 
-nav ul ul {
+ul ul {
 	display: none;
 }
 
-nav ul li:hover > ul {
-		display: block;
+ul li {
+	color: white;
+	display: inline;
 }
 
-nav ul {
-	background: #efefef; 
-	background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
-	background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
-	background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
-	box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
-	padding: 0 20px;
-	border-radius: 10px;  
+ul {
+	float: right;
+	padding: 0;
 	list-style: none;
-	position: relative;
-	display: inline-table;
+	display: inline-block;
 }
-nav ul:after {
-	content: ""; clear: both; display: block;
+
+ul li:hover > ul {
+	display: block;
 }
+
+ul:after {
+        content: ""; clear: both; display: block;
+}
+
+#logo a {
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Lobster', cursive;
+	font-size: 16pt;
+	font-weight: normal;
+	color: white;
+	text-decoration: none;
+	margin-right: 20px;
+	border-right-color: rgb(68, 68, 68);
+	border-right-style: solid;
+	border-right-width: 1px;
+	line-height: 20px;
+}
+
 

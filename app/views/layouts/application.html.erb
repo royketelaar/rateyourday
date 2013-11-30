@@ -4,33 +4,48 @@
   <title>Rateyourday</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  
+  <!-- fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
-		<nav>
-			<ul>
-				<li><a href="#"></a></li>
-				<li><a href="#">Rate your day</a></li>
-				<li><a href="#">Statistieken</a></li>
-				<li><a href="#">Verslagen</a></li>
-				<% if user_signed_in? %>
-				<li><%= current_user.first_name %>
-
+		<div class="layout-978">
+			<div class="row">
 				<ul>
-					<li><%= link_to "Mijn profiel", profile_path %></li>
-					<li><a href="#">Help</a></li>
-					<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
+					<div class="col8">
+						<li id="logo"><a href="#">Rate your day</a></li>
+						<li><a href="#">Statistieken</a></li>
+						<li><a href="#">Verslagen</a></li>
+					</div>
+					<div class="col4">
+						<% if user_signed_in? %>
+							<li><%= current_user.first_name + " " +current_user.last_name %>
+							<ul>	
+								<li><%= link_to "Mijn profiel", profile_path %></li>
+								<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
+							</ul>
+						<% else %>
+							<li><%= link_to "inloggen", new_user_session_path %></li>
+						<% end %>
+						</li>
+					</div>
 				</ul>
+			</div>
+			<div class="row-end">&nbsp;</div>
+		</div>
 
-				<% else %>
-				<%= link_to "inloggen", new_user_session_path %>
-				<% end %>
-				</li>
-			</ul>
-		</nav>
-			
 	</header>
+	<div class="layout-978">
+		<div class="row">
+			<div class="col12">
+				
+			</div>
+			<div class="row-end">&nbsp;</div>
+		</div>
+	
 	<div id="user_nav">
 		<% if user_signed_in? %>
 		Ingelogd als <%= current_user.first_name + " " +current_user.last_name %>. 
