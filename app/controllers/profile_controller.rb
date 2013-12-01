@@ -8,5 +8,5 @@ class ProfileController < ApplicationController
     @percint = ((allAttributes - empty).to_d / allAttributes) * 100
     
   end
- 
+
 end
