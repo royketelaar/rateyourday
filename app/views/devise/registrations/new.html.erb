@@ -1,36 +1,38 @@
-<div class="row">
-	<div class="col12">
-		<h2>Registratie</h2>
-		<div class="profilecard-new">
+<div class="layout-978">
+	<div class="row">
+		<div class="col12">
+			<h2>Registratie</h2>
+			<div class="profilecard-new">
 
-				<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-				<%= devise_error_messages! %>
+					<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+					<%= devise_error_messages! %>
 				
-				<div>
-					<%= f.label :first_name, 'Voornaam' %>
-					<%= f.text_field :first_name %>
-				</div>
-				<div>
-					<%= f.label :last_name, 'Achternaam' %>
-					<%= f.text_field :last_name %>
-				</div>
+					<div>
+						<%= f.label :first_name, 'Voornaam' %>
+						<%= f.text_field :first_name %>
+					</div>
+					<div>
+						<%= f.label :last_name, 'Achternaam' %>
+						<%= f.text_field :last_name %>
+					</div>
 				
-				<div><%= f.label :email %>
-					<%= f.email_field :email, :autofocus => true %>
-				</div>
+					<div><%= f.label :email %>
+						<%= f.email_field :email, :autofocus => true %>
+					</div>
 
-				<div>
-					<%= f.label :password, "Wachtwoord" %>
-					<%= f.password_field :password %>
-				</div>
+					<div>
+						<%= f.label :password, "Wachtwoord" %>
+						<%= f.password_field :password %>
+					</div>
 
-				<div>
-					<%= f.label :password_confirmation, "Wachtwoord bevestiging" %>
-					<%= f.password_field :password_confirmation %>
-				</div>
+					<div>
+						<%= f.label :password_confirmation, "Wachtwoord bevestiging" %>
+						<%= f.password_field :password_confirmation %>
+					</div>
 
-			  <div><%= f.submit "Registreren", :id => "change-button" %></div>
-			<% end %>
+				  <div><%= f.submit "Registreren", :id => "change-button" %></div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>
