@@ -15,6 +15,23 @@
 <div class="row">
 	<div class="col6">
 		<div class="profilecard-change">
+			<h3>Inlog gegevens</h3>
+			<div>
+		    	<%= f.label :email, 'email' %>
+				<%= f.email_field :email, :autofocus => true, :autocomplete => :off %>
+			</div>
+			
+		    <div>
+				<%= f.label :password, "Nieuw wachtwoord" %>
+				<%= f.password_field :password, :autofocus => true %>
+			</div>
+
+		    <div>
+				<%= f.label :password_confirmation, "Bevestig nieuw wachtwoord" %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+		</div>
+		<div class="profilecard-change" id="second-column">
 			<h3>Prive</h3>
 			<div>
 				<%= f.label :first_name, 'Voornaam' %>
@@ -23,11 +40,6 @@
 			<div>
 				<%= f.label :first_name, 'Achternaam' %>
 				<%= f.text_field :last_name %>
-			</div>
-			
-			<div>
-		    	<%= f.label :email, 'email' %>
-				<%= f.email_field :email, :autofocus => true, :autocomplete => :off %>
 			</div>
 
 			<div>
@@ -42,7 +54,7 @@
 
 		    <div>
 				<%= f.label :gender, 'Geslacht' %>
-				
+		
 				<div class="radio-button">
 					<%= f.label :gender, 'Man'%>
 					<%= f.radio_button :gender, "Man" %>
@@ -57,12 +69,12 @@
 				<%= f.label :education, 'Opleidingsniveau'%>
 		      	<%= f.text_field :education %>
 		    </div>
-			
-		</div>
 	</div>
-	<div class="col6">
-		<div class="profilecard-change">
-			<h3>Werk</h3>
+</div>
+
+<div class="col6">
+	<div class="profilecard-change" id="work-column">
+		<h3>Werk</h3>
 		    <div>
 				<%= f.label :employment, 'Bedrijfsnaam' %>
 				<%= f.text_field :employment %>
@@ -109,6 +121,7 @@
 		</div>
 	</div>
 </div>
+
 <div class="row-end">&nbsp;</div>
 
 <div class="row">

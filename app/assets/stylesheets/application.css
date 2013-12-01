@@ -65,7 +65,7 @@ header {
 	text-decoration: none;
 }
 
-ul .col8 li a {
+ul li a {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'helvetica neue', sans-serif;
 	font-size: 11pt;
