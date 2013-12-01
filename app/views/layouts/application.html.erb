@@ -39,8 +39,9 @@
 			</div>
 			<div class="row-end">&nbsp;</div>
 		</div>
-
 	</header>
+	
+	<% if user_signed_in? %>
 	<div class="layout-978">
 		<% flash.each do |name, msg| %>
 			<%= content_tag :div, msg, :id => "flash_#{name}" %>
@@ -48,6 +49,9 @@
 
 		<%= yield %>	
 	</div>
+	<% else %>
+		<%= yield %>
+	<% end %>
 
 
 </body>
