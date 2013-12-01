@@ -8,8 +8,8 @@
 <div class="row">
 	<div class="col12">
 		<div class="progress-bar">
-			<%= progress_bar(10, :color => 'default', :rounded => false) %>
-			<p class="progress-number">10% ingevuld</p>
+			<%= progress_bar(@percint, :color => 'default', :rounded => false) %>
+			<p class="progress-number"><%= number_with_precision(@percint, :precision => 0) %>% ingevuld</p>
 		</div>
 	</div>
 </div>
