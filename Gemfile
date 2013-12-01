@@ -6,9 +6,7 @@ gem 'rails', '4.0.0'
 gem 'devise'
 
 # Use sqlite3 as the database for Active Record
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3'
 
 group :production do
   gem 'pg'
