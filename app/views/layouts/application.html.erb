@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <title>Rateyourday</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -41,18 +42,13 @@
 
 	</header>
 	<div class="layout-978">
-		<div class="row">
-			<div class="col12">
-				
-			</div>
-			<div class="row-end">&nbsp;</div>
-		</div>
+		<% flash.each do |name, msg| %>
+			<%= content_tag :div, msg, :id => "flash_#{name}" %>
+		<% end %>
 
-<% flash.each do |name, msg| %>
-	<%= content_tag :div, msg, :id => "flash_#{name}" %>
-<% end %>
+		<%= yield %>	
+	</div>
 
-<%= yield %>
 
 </body>
 </html>

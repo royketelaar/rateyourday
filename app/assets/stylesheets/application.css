@@ -34,11 +34,23 @@ div.col12 { width: 978px; }
 
 body { margin: 0; background-color: rgb(245, 245, 245); }
 
+/* main font styling */
+h2 {
+	font-family: 'helvetica neue', helvetica, Arial, sans-serif;
+	font-size: 21px;
+	color: rgb(75, 75, 75);
+	font-weight: 600;
+	width: 100%;
+	padding-bottom: 10px;
+	border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+}
+
 /* header */
 header {
 	background-color: rgb(21, 27, 31);
 	width: auto;
 	height: auto;
+	margin-bottom: 30px;
 }
 
 #logo { padding-left: 0 !important; }
@@ -100,6 +112,7 @@ ul .drop-down {
 	border: 1px solid rgba(20, 20, 20, 0.2);
 	border-bottom-left-radius: 5px;
 	border-bottom-right-radius: 5px;
+	z-index: 1000;
 }
 
 .drop-down li { 
