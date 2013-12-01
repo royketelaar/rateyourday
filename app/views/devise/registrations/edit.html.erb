@@ -1,87 +1,146 @@
-<h2>Wijzig <%= resource_name.to_s.humanize %></h2>
+<h2>Wijzig profiel</h2>
+
+<div class="row">
+	<div class="col12">
+		<div class="progress-bar">
+			<%= progress_bar(@percint, :color => 'default', :rounded => false) %>
+			<p class="progress-number"><%= number_with_precision(@percint, :precision => 0) %>% ingevuld</p>
+		</div>
+	</div>
+</div>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+<div class="row">
+	<div class="col6">
+		<div class="profilecard-change">
+			<h3>Inlog gegevens</h3>
+			<div>
+		    	<%= f.label :email, 'E-mail' %>
+				<%= f.email_field :email, :autofocus => true, :autocomplete => :off %>
+			</div>
+			
+		    <div>
+				<%= f.label :password, "Nieuw wachtwoord" %>
+				<%= f.password_field :password, :autofocus => true %>
+			</div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+		    <div>
+				<%= f.label :password_confirmation, "Bevestig nieuw wachtwoord" %>
+				<%= f.password_field :password_confirmation %>
+			</div>
+		</div>
+		<div class="profilecard-change" id="second-column">
+			<h3>Prive</h3>
+			<div>
+				<%= f.label :first_name, 'Voornaam' %>
+				<%= f.text_field :first_name %>
+			</div>
+			<div>
+				<%= f.label :first_name, 'Achternaam' %>
+				<%= f.text_field :last_name %>
+			</div>
 
-  <div><%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-  <%= f.password_field :password, :autocomplete => "off" %></div>
+			<div>
+				<%= f.label :place, 'Woonplaats' %>
+		    	<%=  f.text_field :place %>
+			</div>
 
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
+			<div>
+				<%= f.label :birthday, 'Geboortedatum'%>
+		    	<%= f.date_select :birthday, :start_year => Time.now.year - 67, :end_year => Time.now.year - 16, :order => [:day, :month, :year] %>
+			</div>
 
-  <div><%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-  <%= f.password_field :current_password %></div>
+		    <div>
+				<%= f.label :gender, 'Geslacht' %>
+		
+				<div class="radio-button">
+					<%= f.label :gender, 'Man'%>
+					<%= f.radio_button :gender, "Man" %>
+				</div>
+				<div class="radio-button">
+					<%= f.label :gender, 'Vrouw'%>
+					<%= f.radio_button :gender, "Vrouw" %>
+				</div>
+		    </div>
+
+		    <div>
+				<%= f.label :education, 'Opleidingsniveau'%>
+		      	<%= f.text_field :education %>
+		    </div>
+	</div>
+</div>
+
+<div class="col6">
+	<div class="profilecard-change" id="work-column">
+		<h3>Werk</h3>
+		    <div>
+				<%= f.label :employment, 'Bedrijfsnaam' %>
+				<%= f.text_field :employment %>
+			</div>
+			
+			<div>
+				<%= f.label :work_location, 'Werkplaats' %>
+				<%= f.text_field :work_location %>
+		    </div>
+
+		    <div>
+				<%= f.label :section, 'Branche' %>
+				<%= f.text_field :section %>
+			</div>
+			
+			<div>
+				<%= f.label :function, 'Functie' %>
+				<%= f.text_field :function %>
+		    </div>
+			
+		    <div class="with-buttons">
+				<%= f.label :management, 'Bent u leidinggevende?'%>
+				<%= f.label :management, 'Ja'%>
+				<%= f.radio_button :management, "Ja" %>
+
+				<%= f.label :management, 'Nee'%>
+				<%= f.radio_button :management, "Nee" %>
+		    </div>
   
-<div>
-  <%= f.text_field :first_name, :placeholder => 'Voornaam' %>
-  <%= f.text_field :last_name, :placeholder => 'Achternaam' %>
+		    <div>
+				<%= f.label :employees, 'Aantal werknemers' %>
+				<%= f.text_field :employees %>
+		    </div>
+			
+		    <div>
+				<%= f.label :hours_week, 'Uren per week' %>
+				<%= f.text_field :hours_week %>
+		    </div>
+			
+		    <div>
+				<%= f.label :salary, 'Salaris' %>
+				<%= f.text_field :salary %>
+		    </div>
+		</div>
+	</div>
 </div>
 
-<div>
-  <%=  f.text_field :place, :placeholder => 'Woonplaats' %>
+<div class="row-end">&nbsp;</div>
+
+<div class="row">
+	<div class="col12">
+		<div class="profilecard-save">
+		    <div>
+				<h3>Wijzigingen bevestigen</h3>
+		  	  <%= f.password_field :current_password, :placeholder => 'Huidig wachtwoord' %></div>
+			
+			  <%= f.submit "Wijzig", :id => 'change-button' %>
+			  
+			  <% end %>
+			  
+			  <%= button_to "Account verwijderen", registration_path(resource_name), :data => { :confirm => "Het verwijderen kan niet ongedaan gemaakt worden. Weet u zeker dat u dit account wilt verwijderen?" }, :method => :delete, :id => 'delete-button' %>
+		</div>
+	</div>
 </div>
-
-
-<div>
-  <%= f.date_select :birthday, :start_year => Time.now.year - 67, :end_year => Time.now.year - 16, :order => [:day, :month, :year] %>
-</div>
-
-  <div>Geslacht:</div>
-  <div>
-    <%= f.label 'Man'%>
-    <%= f.radio_button :gender, "Man" %>
-
-    <%= f.label 'Vrouw'%>
-    <%= f.radio_button :gender, "Vrouw" %>
-  </div>
-
-  <div>
-    <%= f.text_field :education, :placeholder => 'Opleidingsniveau' %>
-  </div>
-
-  <div>
-    <%=  f.text_field :employment, :placeholder => 'Bedrijfsnaam' %>
-
-    <%=  f.text_field :work_location, :placeholder => 'Werk locatie' %>
-  </div>
-
-  <div>
-    <%= f.text_field :section, :placeholder => 'Branche' %>
-    <%=  f.text_field :function, :placeholder => 'Functie' %>
-  </div>
-  <div>Leidinggevende?</div>
-  <div>
-    <%= f.label 'Ja'%>
-    <%= f.radio_button :management, "Yes" %>
-
-    <%= f.label 'Nee'%>
-    <%= f.radio_button :management, "No" %>w
-  </div>
-  
-  <div>
-    <%=  f.text_field :employees, :placeholder => 'Aantal werknemers' %>
-  </div>
-  <div>
-    <%=  f.text_field :hours_week, :placeholder => 'Uren per week' %>
-  </div>
-  <div>
-    <%=  f.text_field :salary, :placeholder => 'Salaris' %>
-  </div>
+<div class="row-end">&nbsp;</div>
 
 
 
-  <div><%= f.submit "Wijzig" %></div>
-<% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Account verwijderen", registration_path(resource_name), :data => { :confirm => "Zeker weten?" }, :method => :delete %></p>
-
-<%= link_to "Terug", :back %>

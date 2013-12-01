@@ -1,6 +1,8 @@
 // Place all the styles related to the Profile controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// View profile
 .col12 #name { display: inline; float: left; }
 
 .col12 #name a { 
@@ -34,8 +36,8 @@
 	background-color: white;
 	border: 1px solid rgba(51, 51, 51, 0.2);
 	height: 300px;
-	width: 977;
 	padding-left: 20px;
+	padding-bottom: 20px;
 }
 
 .profilecard h3 {
@@ -52,3 +54,136 @@
 	color: rgb(75, 75, 75);
 }
 
+// Change profile
+.profilecard-change {
+	background-color: white;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	min-height: auto;
+	width: 977;
+	padding: 0 35px 20px 20px;
+}
+
+.profilecard-change h3 {
+	font-family: 'helvetiva neue', Helvetica, Arial;
+	font-weight: 500;
+	font-size: 13pt;
+	color: rgb(75, 75, 75);
+}
+
+.profilecard-change div label {
+	font-family: 'helvetiva neue', Helvetica, Arial;
+	font-weight: 300;
+	font-size: 11pt;
+	color: rgb(75, 75, 75);
+	display: block;
+	margin-bottom: 10px;
+}
+
+.profilecard-change div { display: block; margin-bottom: 10px; }
+
+.profilecard-change div input {
+	width: 100%;
+	height: 25px;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	border-radius: 3px;
+	padding-left: 10px;
+	font-size: 9pt;
+	color: rgb(85, 85, 85);
+}
+
+.profilecard-change div .radio-button input, .profilecard-change div .radio-button label { display: inline !important; }
+
+#second-column { margin-top: 25px; }
+
+#work-column { height: 821px;}
+
+.profilecard-save {
+	background-color: white;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	height: auto;
+	margin-top: 25px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.profilecard-save h3 {
+	font-family: 'helvetiva neue', Helvetica, Arial;
+	font-weight: 300;
+	font-size: 14pt;
+	color: rgb(75, 75, 75);
+	display: block;
+	margin-bottom: 20px;
+}
+
+.profilecard-save input {
+	width: 300px;
+	height: 25px;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	border-radius: 3px;
+	font-size: 9pt;
+	color: rgb(85, 85, 85);
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#change-button {
+	height: 30px;
+	width: 310px;
+	background-color: green;
+	color: white;
+	margin-bottom: 10px !important;
+}
+
+#delete-button {
+	height: 30px;
+	width: 310px;
+	background-color: red;
+	color: white;
+	margin-bottom: 10px !important;
+}
+
+// Register
+.profilecard-new {
+	background-color: white;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	height: auto;
+	margin-top: 20px;
+	padding-left: 20px;
+	padding-bottom: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+.profilecard-new h3 {
+	font-family: 'helvetiva neue', Helvetica, Arial;
+	font-weight: 300;
+	font-size: 14pt;
+	color: rgb(75, 75, 75);
+	display: block;
+	margin-bottom: 20px;
+}
+
+.profilecard-new input {
+	width: 298px;
+	display: block;
+	height: 25px;
+	border: 1px solid rgba(51, 51, 51, 0.2);
+	border-radius: 3px;
+	font-size: 9pt;
+	color: rgb(85, 85, 85);
+	margin-bottom: 10px;
+	padding-left: 10px;
+}
+
+.profilecard-new label {
+	font-family: 'helvetiva neue', Helvetica, Arial;
+	font-weight: 300;
+	font-size: 11pt;
+	color: rgb(75, 75, 75);
+	display: block;
+	margin-bottom: 10px;
+	text-align: left !important;
+}
