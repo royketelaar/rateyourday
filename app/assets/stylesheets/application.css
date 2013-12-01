@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require 'css3-progress-bar'
  */
 
 div.layout-978 { width: 978px; margin: 0px auto; }

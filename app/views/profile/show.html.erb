@@ -1,3 +1,41 @@
-<h1>Profile page</h1>
-<p><%= current_user.first_name %></p>
-<%= link_to "Wijzig profiel", edit_user_registration_path %>
+<div class="row">
+	<div class="col12">
+		<h2 id="name"><%= current_user.first_name + " " + current_user.last_name %> <%= link_to "Wijzig profiel", edit_user_registration_path %></h2>
+	</div>
+</div>
+<div class="row-end">&nbsp;</div>
+
+<div class="row">
+	<div class="col12">
+		<div class="progress-bar">
+			<%= progress_bar(10, :color => 'default', :rounded => false) %>
+			<p class="progress-number">10% ingevuld</p>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col6">
+		<div class="profilecard">
+			<h3>Prive</h3>
+			<p>E-mail: <%= current_user.email %></p>
+			<p>Geslacht: <%= current_user.gender %></p>
+			<p>Geboortedatum: <%= current_user.birthday %></p>
+			<p>Woonplaats: <%= current_user.place %></p>
+			<p>Scholing: <%= current_user.education %></p>
+		</div>
+	</div>
+	<div class="col6">
+		<div class="profilecard">
+			<h3>Werk</h3>
+			<p>Bedrijf: <%= current_user.employment %></p>
+			<p>Branche: <%= current_user.section %></p>
+			<p>Functie: <%= current_user.function %></p>
+			<p>Leidinggevend: <%= current_user.management %></p>
+			<p>Werkuren: <%= current_user.hours_week %></p>
+			<p>Salaris: <%= current_user.salary %></p>
+			<p>Werklocatie: <%= current_user.work_location %></p>
+		</div>
+	</div>
+</div>
+<div class="row-end">&nbsp;</div>

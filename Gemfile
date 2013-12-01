@@ -11,6 +11,9 @@ gem 'sqlite3'
 # Charts
 gem "chartkick"
 
+#progress-bar
+gem 'css3-progress-bar-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
