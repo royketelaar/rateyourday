@@ -32,9 +32,7 @@ div.col10 { width: 810px; }
 div.col11 { width: 894px; }
 div.col12 { width: 978px; }
 
-body {
-	margin: 0;
-}
+body { margin: 0; background-color: rgb(245, 245, 245); }
 
 /* header */
 header {
@@ -54,7 +52,7 @@ header {
 	text-decoration: none;
 }
 
-ul li a {
+ul .col8 li a {
 	-webkit-font-smoothing: antialiased;
 	font-family: 'helvetica neue', sans-serif;
 	font-size: 11pt;
@@ -85,11 +83,12 @@ ul li {
 
 #profile-drop-down {
 	float: right !important;
-	border: none;
 	padding-bottom: 24px;
+	border-left: 1px solid rgb(68, 68, 68);
 }
 
 ul .drop-down {
+	margin-left: -26px;
 	display: none;
 	position: absolute;
 	background-color: white;
@@ -97,22 +96,26 @@ ul .drop-down {
 	width: auto;
 	float: none !important;
 	left: auto;
-	margin-top: 24px;
+	margin-top: 25px;
 	border: 1px solid rgba(20, 20, 20, 0.2);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 
 .drop-down li { 
 	display: block;
 	border-right: none;
-	width: 130px;
+	width: 127px;
+	border-bottom: 1px solid rgba(20, 20, 20, 0.2);
+	text-align: center;
 }
 
 .drop-down li a {
 	font-size: 10pt !important;
 	font-weight: normal;
 	color: rgb(0, 136, 204);
-	border-bottom: 1px solid rgba(20, 20, 20, 0.2);
-	padding: 5px 25px 5px 25px;
+	padding: 5px 15px 5px 15px;
+	text-decoration: none;
 }
 
 ul li:hover > .drop-down {
