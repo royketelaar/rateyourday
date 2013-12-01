@@ -16,20 +16,22 @@
 			<div class="row">
 				<ul>
 					<div class="col8">
-						<li id="logo"><a href="#">Rate your workday</a></li>
-						<li><a href="#">Statistieken</a></li>
-						<li><a href="#">Verslagen</a></li>
+						<li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
+						<% if user_signed_in? %>
+							<li><a href="#">Statistieken</a></li>
+							<li><a href="#">Verslagen</a></li>
+						<%end%>
 					</div>
 					<div class="col4">
 						<% if user_signed_in? %>
-							<li><%= current_user.first_name + " " +current_user.last_name %>
-							<ul>	
+							<li id="profile-drop-down"><%= current_user.first_name + " " +current_user.last_name %>
+							<ul class="drop-down">	
 								<li><%= link_to "Mijn profiel", profile_path %></li>
 								<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
 							</ul>
 						<% else %>
-							<li><%= link_to "inloggen", new_user_session_path %></li>
-							<li><%= link_to "Registreren", new_user_registration_path %> of <%= link_to "inloggen", new_user_session_path %></li>
+							<li><%= link_to "Inloggen", new_user_session_path %></li>
+							<li><%= link_to "Registreren", new_user_registration_path%></li>
 						<% end %>
 						</li>
 					</div>
@@ -46,15 +48,6 @@
 			</div>
 			<div class="row-end">&nbsp;</div>
 		</div>
-	
-	<div id="user_nav">
-		<% if user_signed_in? %>
-		Ingelogd als <%= current_user.first_name + " " +current_user.last_name %>. 
-		<%= link_to "Log uit", destroy_user_session_path, :method => :delete %>
-		<% else %>
-		<%= link_to "Registreren", new_user_registration_path %> of <%= link_to "inloggen", new_user_session_path %>
-		<% end %>
-	</div>
 
 <% flash.each do |name, msg| %>
 	<%= content_tag :div, msg, :id => "flash_#{name}" %>
