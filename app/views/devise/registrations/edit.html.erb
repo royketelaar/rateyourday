@@ -75,7 +75,7 @@
 <div class="col6">
 	<div class="profilecard-change" id="work-column">
 		<h3>Werk</h3>
-		    <div>
+		    <div id='employment-field' data-companies="<%= User.pluck(:employment).uniq.to_json %>">
 				<%= f.label :employment, 'Bedrijfsnaam' %>
 				<%= f.text_field :employment %>
 			</div>
