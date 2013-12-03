@@ -1,13 +1,6 @@
 <h2>Wijzig profiel</h2>
 
-<div class="row">
-	<div class="col12">
-		<div class="progress-bar">
-			<%= progress_bar(@percint, :color => 'default', :rounded => false) %>
-			<p class="progress-number"><%= number_with_precision(@percint, :precision => 0) %>% ingevuld</p>
-		</div>
-	</div>
-</div>
+<%= render :partial => '/layouts/progress_bar' %>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= devise_error_messages! %>
@@ -74,13 +67,8 @@
 
 <div class="col6">
 	<div class="profilecard-change" id="work-column">
-<<<<<<< HEAD
 		<h3>Werk gegevens</h3>
-		    <div>
-=======
-		<h3>Werk</h3>
 		    <div id='employment-field' data-companies="<%= User.pluck(:employment).uniq.to_json %>">
->>>>>>> a1868660690f2aa453c29fb9fd8a76a15ac8ae8f
 				<%= f.label :employment, 'Bedrijfsnaam' %>
 				<%= f.text_field :employment %>
 			</div>

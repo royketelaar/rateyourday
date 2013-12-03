@@ -1,2 +1,11 @@
 module ApplicationHelper
+  
+  def user_percentage
+    user = current_user
+    allAttributes = user.attributes.values.count - 15
+    empty = user.attributes.values.select(&:blank?).count - 3
+    
+    ((allAttributes - empty).to_d / allAttributes) * 100 
+  end
+  
 end

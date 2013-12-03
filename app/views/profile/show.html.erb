@@ -5,14 +5,7 @@
 </div>
 <div class="row-end">&nbsp;</div>
 
-<div class="row">
-	<div class="col12">
-		<div class="progress-bar">
-			<%= progress_bar(@percint, :color => 'default', :rounded => false) %>
-			<p class="progress-number"><%= number_with_precision(@percint, :precision => 0) %>% ingevuld</p>
-		</div>
-	</div>
-</div>
+<%= render :partial => '/layouts/progress_bar' %>
 
 <div class="row">
 	<div class="col6">

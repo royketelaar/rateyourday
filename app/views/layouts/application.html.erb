@@ -19,7 +19,7 @@
 					<div class="col8">
 						<li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
 						<% if user_signed_in? %>
-							<li><a href="#">Rate</a></li>
+							<li><%= link_to "Rate!", ratings_path %></li>
 						<%end%>
 					</div>
 					<div class="col4">
@@ -40,6 +40,7 @@
 			<div class="row-end">&nbsp;</div>
 		</div>
 	</header>
+	<div id="breaker"></div>
 	
 	<% if user_signed_in? %>
 	<div class="layout-978">

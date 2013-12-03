@@ -1,16 +1,15 @@
 Rateyourday::Application.routes.draw do
-
+  
+  root to: "home#index"
+  
   match '/profile', to: "profile#show", via: 'get'
-  match '/rateyourday', to: "dashboard#rateyourday", via: 'get'
-  match '/statistics', to: "dashboard#statistics", via: 'get'
-
-  get "dashboard/rateyourday"
-  get "profile/show"
-
+  
   devise_for :users
   resources :dashboard
-
-  root to: "home#index"
+  resources :ratings
+  resources :questions
+  resources :answers
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
