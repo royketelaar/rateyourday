@@ -1,36 +1,40 @@
 class AnswersController < ApplicationController
   
   def index
-    @answer = Answer.all.where(:user_id => current_user.id)
+    
   end
   
   def new
-    def count_days
-      begin_date = current_user.created_at.strftime("%d-%m-%Y").to_i
-      end_date = DateTime.now.strftime("%d-%m-%Y").to_i
-      
-      if begin_date = 0
-        begin_date + 3
-      end
+    days = Playlist.count_days(current_user.id)
+    playlist = Playlist.all.where(:user_id => current_user.id)
+    daily_questions = Playlist.all.where(:day => days)
+    not_answered = daily_questions.where(:answer_id => nil)
     
-      max_answers = (end_date - begin_date) * 3
+    if playlist.blank?
+      Playlist.generate(current_user.id)
     end
-  
-    count_answers = Answer.all.where(:user_id => current_user.id).count
     
-    if !(count_days == count_answers)
-      @question = Question.random
-      @answer = Answer.new
-    else
+    if not_answered.empty?
       redirect_to root_path
+    else
+      $playlist_with_question = not_answered.order("RANDOM()").limit(1)
+      q_id = Playlist.find($playlist_with_question).question_id
+      
+      $question = Question.find(q_id)
+      @answer = Answer.new
     end
   end
   
   def create
+    playlist_id = Playlist.find($playlist_with_question).id
     @answer = Answer.new(answer_params)
-    @answer.question_id = $question.id
-    @answer.user_id = current_user.id
-    @answer.save
+    @answer.playlist_id = playlist_id
+    
+    if @answer.save
+      @playlist = Playlist.find(playlist_id)
+      @playlist.update_attributes(:answer_id => @answer.id)
+    end
+    
     redirect_to root_path
   end
   
@@ -40,7 +44,7 @@ class AnswersController < ApplicationController
   end
   
   def answer_params
-    params.require(:answer).permit(:answer, assets_attributes: [ :question_id ])
+    params.require(:answer).permit(:answer,:playlist_id)
   end
-
+  
 end
