@@ -4,12 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_devise_params, if: :devise_controller?
   
-  def random_question
-    q = rand(1..Question.count)
-  end
-  
 
-  
+
   private
   
   def configure_devise_params

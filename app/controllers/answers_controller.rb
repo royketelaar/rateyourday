@@ -4,21 +4,34 @@ class AnswersController < ApplicationController
     @answer = Answer.all.where(:user_id => current_user.id)
   end
   
+  def new
+    def count_days
+      begin_date = current_user.created_at.strftime("%d-%m-%Y").to_i
+      end_date = DateTime.now.strftime("%d-%m-%Y").to_i
+      
+      if begin_date = 0
+        begin_date + 3
+      end
+    
+      max_answers = (end_date - begin_date) * 3
+    end
+  
+    count_answers = Answer.all.where(:user_id => current_user.id).count
+    
+    if !(count_days == count_answers)
+      @question = Question.random
+      @answer = Answer.new
+    else
+      redirect_to root_path
+    end
+  end
+  
   def create
     @answer = Answer.new(answer_params)
     @answer.question_id = $question.id
     @answer.user_id = current_user.id
-    
-    
-    respond_to do |format|
-      if @answer.save
-        format.html { redirect_to @answer }
-        format.json { render json: @answer, status: :created, location: @answer }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @answer.errors, status: :unprocessable_entity }
-      end
-    end
+    @answer.save
+    redirect_to root_path
   end
   
   def show

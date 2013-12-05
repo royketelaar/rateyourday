@@ -19,7 +19,7 @@
 					<div class="col8">
 						<li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
 						<% if user_signed_in? %>
-							<li><%= link_to "Rate!", ratings_path %></li>
+							<li><%= link_to "Rate!", new_answer_path %></li>
 						<%end%>
 					</div>
 					<div class="col4">
@@ -53,7 +53,8 @@
 	<% else %>
 		<%= yield %>
 	<% end %>
-
+	
+	
 
 </body>
 </html>

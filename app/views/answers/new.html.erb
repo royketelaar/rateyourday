@@ -3,11 +3,12 @@
 		<h2>Rate Your Day!</h2>
 		<div class="question">
 	  		
-			<%= $question.question %>
+			<%= @question.question %>
 			<%= form_for @answer do |f| %>
-				<%= f.text_field :answer %>
+				<%= f.range_field :answer, :in => 0..5, :step => '1', :id => 'slider' %>
 				<%= f.submit 'Beantwoord'%>
 			<% end %>
+		
 		</div>
 	</div>
 	<div class="row-end">&nbsp;</div>

@@ -8,4 +8,5 @@ module ApplicationHelper
     ((allAttributes - empty).to_d / allAttributes) * 100 
   end
   
+  
 end

@@ -6,8 +6,6 @@ Rateyourday::Application.routes.draw do
   
   devise_for :users
   resources :dashboard
-  resources :ratings
-  resources :questions
   resources :answers
   
   # The priority is based upon order of creation: first created -> highest priority.
