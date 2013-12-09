@@ -8,7 +8,7 @@ module ApplicationHelper
     ((allAttributes - empty).to_d / allAttributes) * 100 
   end
   
-  def test
+  def notification
     Playlist.all.where(:user_id => current_user.id).where(:day => (Playlist.count_days(current_user.id))).where(:answer_id => nil).count
   end
   
