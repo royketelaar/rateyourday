@@ -1,16 +1,20 @@
 class AnswersController < ApplicationController
   
   def index
+    answer = Answer.all
+    @playlist = Playlist.all.where(:user_id => current_user.id).where(:answer_id => answer)
+    
+    scale1 = Question.all.where(:scale_id => 1)
     
   end
   
   def new
     days = Playlist.count_days(current_user.id)
-    playlist = Playlist.all.where(:user_id => current_user.id)
-    daily_questions = Playlist.all.where(:day => days)
+    user_playlist = Playlist.all.where(:user_id => current_user.id)
+    daily_questions = user_playlist.where(:day => days)
     not_answered = daily_questions.where(:answer_id => nil)
     
-    if playlist.blank?
+    if user_playlist.blank?
       Playlist.generate(current_user.id)
     end
     
