@@ -19,7 +19,7 @@ class AnswersController < ApplicationController
     end
     
     if not_answered.empty?
-      redirect_to root_path
+      redirect_to answers_path
     else
       $playlist_with_question = not_answered.order("RANDOM()").limit(1)
       q_id = Playlist.find($playlist_with_question).question_id

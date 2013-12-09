@@ -19,7 +19,16 @@
 					<div class="col8">
 						<li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
 						<% if user_signed_in? %>
-							<li><%= link_to "Rate!", new_answer_path %></li>
+							<li>
+								<%= link_to "Rate!", new_answer_path %>
+								<% if test == 1 %>
+									1
+								<% elsif test == 2 %>
+									2
+								<% elsif test == 3 %>	
+									3
+								<% end %>
+							</li>
 						<%end%>
 					</div>
 					<div class="col4">

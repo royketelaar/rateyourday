@@ -7,7 +7,7 @@
 			Schaal:<%= Scale.find(Question.find(a.question_id).scale_id).scale %></br>
 			Vraag:<%= Question.find(a.question_id).question %></br>
 			Cijfer:<%= Answer.find(a.answer_id).answer %>
-			<%= a.created_at.strftime("%d-%m-%Y") %>
+			<%= Answer.find(a.answer_id).created_at.strftime("%d-%m-%Y") %>
 		</div>
 		
 		<% end %>
