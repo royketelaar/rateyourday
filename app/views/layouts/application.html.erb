@@ -47,9 +47,14 @@
 	
 	<% if user_signed_in? %>
 	<div class="layout-978">
-		<% flash.each do |name, msg| %>
-			<%= content_tag :div, msg, :id => "flash_#{name}" %>
-		<% end %>
+		<div class="col12">
+			<% if notice %>
+				<span id="notice"><%= notice %></span>
+			<% end %>
+			<% if flash[:error] %>
+				<span id="error"><%= flash[:error] %></span>
+			<% end %>
+		</div>
 
 		<%= yield %>	
 	</div>

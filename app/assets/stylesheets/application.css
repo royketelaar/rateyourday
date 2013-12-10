@@ -33,7 +33,7 @@ div.col10 { width: 810px; }
 div.col11 { width: 894px; }
 div.col12 { width: 978px; }
 
-body { margin: 0; background-color: rgb(245, 245, 245); }
+body { margin: 0; background-color: rgb(245, 245, 245); font-family: 'helvetica neue', sans-serif;}
 
 /* main font styling */
 h2 {
@@ -92,7 +92,6 @@ ul {
 
 ul li {
 	-webkit-font-smoothing: antialiased;
-	font-family: 'helvetica neue', sans-serif;
 	font-size: 11pt;
 	font-weight: 700;
 	text-decoration: none;
@@ -148,5 +147,31 @@ ul li:hover > .drop-down {
 	content: ""; 
 	clear: both; 
 	display: block;
+}
+
+#error, #notice {
+	width: auto;
+	height: auto;
+	margin: 0;
+	font-size: 11pt;
+	font-weight: 300;
+	padding: 10px 150px;
+	display: block;
+	
+	border-radius: 2px;
+	
+	text-align: center;
+}
+
+#error {
+	background-color: #fed2d3;
+	border: 1px solid #d8929c;
+	color: #c16c73;
+}
+
+#notice {
+	background-color: #d4fecc;
+	border: 1px solid #a1da96;
+	color: #398d2b;
 }
 

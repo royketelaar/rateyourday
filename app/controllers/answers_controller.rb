@@ -1,10 +1,5 @@
 class AnswersController < ApplicationController
   
-  def index
-    
-    
-  end
-  
   def new
     days = Playlist.count_days(current_user.id)
     user_playlist = Playlist.all.where(:user_id => current_user.id)
@@ -16,7 +11,7 @@ class AnswersController < ApplicationController
     end
     
     if not_answered.empty?
-      redirect_to answers_path
+      redirect_to root_path, :flash => { :error => "De vragen van vandaag zijn allemaal beantwoord" }
     else
       @playlist_with_question = not_answered.first
       q_id = Playlist.find(@playlist_with_question).question_id
@@ -35,8 +30,7 @@ class AnswersController < ApplicationController
       @playlist = playlist
       @playlist.update_attributes(:answer_id => @answer.id)
     end
-    
-    redirect_to root_path
+    redirect_to root_path, :flash => { :notice => "De vragen zijn beantwoord" }
   end
   
   def show
