@@ -13,7 +13,7 @@
 			<h3>Prive</h3>
 			<p>E-mail: <%= current_user.email %></p>
 			<p>Geslacht: <%= current_user.gender %></p>
-			<p>Geboortedatum: <%= current_user.birthday %></p>
+			<p>Geboortedatum: <%= current_user.birthday.strftime("%d-%m-%Y") %></p>
 			<p>Woonplaats: <%= current_user.place %></p>
 			<p>Scholing: <%= current_user.education %></p>
 			

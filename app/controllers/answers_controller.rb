@@ -1,10 +1,7 @@
 class AnswersController < ApplicationController
   
   def index
-    answer = Answer.all
-    @playlist = Playlist.all.where(:user_id => current_user.id).where(:answer_id => answer)
     
-    scale1 = Question.all.where(:scale_id => 1)
     
   end
   
@@ -21,21 +18,21 @@ class AnswersController < ApplicationController
     if not_answered.empty?
       redirect_to answers_path
     else
-      $playlist_with_question = not_answered.order("RANDOM()").limit(1)
-      q_id = Playlist.find($playlist_with_question).question_id
+      @playlist_with_question = not_answered.first
+      q_id = Playlist.find(@playlist_with_question).question_id
       
-      $question = Question.find(q_id)
+      @question = Question.find(q_id)
       @answer = Answer.new
     end
   end
   
   def create
-    playlist_id = Playlist.find($playlist_with_question).id
+    playlist = Playlist.find(params[:answer][:playlist_id])
     @answer = Answer.new(answer_params)
-    @answer.playlist_id = playlist_id
+    @answer.playlist_id = playlist.id
     
     if @answer.save
-      @playlist = Playlist.find(playlist_id)
+      @playlist = playlist
       @playlist.update_attributes(:answer_id => @answer.id)
     end
     
@@ -48,7 +45,7 @@ class AnswersController < ApplicationController
   end
   
   def answer_params
-    params.require(:answer).permit(:answer,:playlist_id)
+    params.require(:answer).permit(:answer, :playlist_id)
   end
   
 end

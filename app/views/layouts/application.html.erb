@@ -21,16 +21,7 @@
 						<% if user_signed_in? %>
 							<li>
 								<%= link_to "Rate!", new_answer_path %>
-								<% if notification == 1 %>
-									1
-								<% elsif notification == 2 %>
-									2
-								<% elsif notification == 3 %>	
-									3
-								<% end %>
-							</li>
-							<li>
-								<%= link_to "Geschiedenis", answers_path %>
+								<%= notification %>
 							</li>
 						<%end%>
 					</div>

@@ -2,9 +2,10 @@
 	<div class="col12">
 		<h2>Rate Your Day!</h2>
 		<div class="question">
-			<%= $question.question %>
+			<%= @question.question %>
 			<%= form_for @answer do |f| %>
 				<%= f.range_field :answer, :in => 0..5, :step => '1', :id => 'slider' %>
+				<%= f.hidden_field :playlist_id, value: @playlist_with_question.id.to_i %>
 				<%= f.submit 'Beantwoord'%>
 			<% end %>
 		</div>

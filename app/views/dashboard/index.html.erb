@@ -1,19 +1,20 @@
 <div class="row">
 	<div class="col9">
 		<h2>Algemene score</h2>
-		<%= pie_chart({"Vitaliteit" => 5, "Toewijding" => 10, "Absorbtie" => 3}, :id => "main-chart")  %>
+		<%= pie_chart({"Vitaliteit" => @vitality.average(:answer), "Toewijding" => @dedication.average(:answer), "Absorbtie" => @absorption.average(:answer)}, :id => "main-chart")  %>
 	</div>
 	<div class="col3">
 		<h2>Eerdere dagen</h2>
 		<div class="history">
-			<p>Zondag 27 nov: 9</p>
-			<p>Maandag 25 nov: 5</p>
-			<p>Dinsdag 26 nov: 8</p>
-			<p>Woensdag 27 nov: 5</p>
-			<p>Donderdag 28 nov: 4</p>
-			<p>Vrijdag 29 nov: 7</p>
-			<p>Zaterdag 30 nov: 8</p>
-			<p>Zondag 1 dec: 8</p>
+			<% @answer.each do |a| %>
+		
+			<div>
+				<p><%= a.created_at.strftime("%A %d %b:") %> <%= a.answer %></p>
+			
+			</div>
+		
+			<% end %>
+		
 		</div>
 	</div>
 </div>
@@ -22,7 +23,7 @@
 <div class="row">
 	<div class="col12">
 		<h2>Test</h2>
-		<%= column_chart ({"Maandag" => 8, "Dinsdag" => 4, "Woensdag" => 8, "Donderdag" => 7, "Vrijdag" => 7}) %>
+		<%= pie_chart ({"Maandag" => 8, "Dinsdag" => 4, "Woensdag" => 8, "Donderdag" => 7, "Vrijdag" => 7}) %>
 	</div>
 </div>
 <div class="row-end">&nbsp;</div>
