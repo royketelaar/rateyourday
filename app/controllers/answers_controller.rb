@@ -30,7 +30,7 @@ class AnswersController < ApplicationController
       @playlist = playlist
       @playlist.update_attributes(:answer_id => @answer.id)
     end
-    redirect_to root_path, :flash => { :notice => "De vragen zijn beantwoord" }
+    redirect_to root_path, :flash => { :notice => "De vraag is beantwoord" }
   end
   
   def show

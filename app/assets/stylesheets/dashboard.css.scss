@@ -2,5 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#main-chart { border: 1px solid rgba(51, 51, 51, 0.2); }
+#main-chart, .history { border: 1px solid rgba(51, 51, 51, 0.2); }
 
+
+.history h4 {
+	font-weight: 300;
+	font-size: 11pt;
+	color: rgb(80, 80, 80);
+	text-align: center;
+	background-color: rgb(200, 200, 200);
+	padding: 10px 0px;
+	margin: 0;
+	letter-spacing: 1px;
+}
+
+.history .historical_answers { padding: 5px; background-color: rgb(250, 250, 250);}
+
+.history p {
+	font-weight: 300;
+	font-size: 10.5pt;
+	letter-spacing: 1px;
+	color: rgb(80, 80, 80);
+	padding: 5px 0px 3px 20px;
+	margin: 0;
+}
