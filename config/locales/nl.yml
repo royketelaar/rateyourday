@@ -19,6 +19,19 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  hello: "Hello world"
-  
+# {
+#   :'nl' =>
+#   {
+#     :date => {
+#       :abbr_month_names => ["day", "month", "year"],
+#       :month_names => ["~", "Januari", "Februari", "Maart", "April", "Mei", "Juni", "Juli", "Augustus", "September", "Oktober", "November", "December"],
+#       :formats => {
+#         :default => "%d/%m/%Y",
+#         :long => "%e %B %Y",
+#         :long_ordinal => "%e %B %Y",
+#         :only_day => "%e",
+#         :short => "%e %b"
+#       }
+#     }
+#   }
+# }
