@@ -2,11 +2,20 @@
 	<div class="col12">
 		<h2>Rate Your Day!</h2>
 		<div class="question">
-			<%= @question.question %>
+			<h3><%= @question.question %></h3>
 			<%= form_for @answer do |f| %>
-				<%= f.range_field :answer, :in => 0..5, :step => '1', :id => 'slider' %>
+				<%= f.range_field :answer, :in => 1..5, :step => '1', :id => 'slider' %>
 				<%= f.hidden_field :playlist_id, value: @playlist_with_question.id.to_i %>
-				<%= f.submit 'Beantwoord'%>
+				<div id="smileys">
+					<%= image_tag("smileys/really_sad.png") %>
+					<%= image_tag("smileys/sad.png") %>
+					<%= image_tag("smileys/normal.png") %>
+					<%= image_tag("smileys/happy.png") %>
+					<%= image_tag("smileys/really_happy.png") %>
+				</div>
+				<div style="text-align:center;">
+					<%= f.submit 'Beantwoorden', :id => 'answerButton'%>
+				</div>
 			<% end %>
 		</div>
 	</div>

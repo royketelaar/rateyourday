@@ -11,6 +11,9 @@ gem 'sqlite3'
 # Charts
 gem "chartkick"
 
+# i18n
+gem 'rails-i18n', '~> 4.0.0'
+
 #progress-bar
 gem 'css3-progress-bar-rails'
 

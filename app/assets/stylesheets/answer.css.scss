@@ -1,0 +1,37 @@
+.question {
+	padding: 5px; 
+	background-color: rgb(250, 250, 250);
+	border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+h3 {
+	text-align: center;
+	font-weight: 400;
+	font-size: 16pt;
+	color: rgb(80, 80, 80);
+}
+
+#slider {
+	width: 600px;
+	margin-left: 189px;
+}
+
+#smileys { padding-left: 85px;}
+
+#smileys img {
+	margin-left: 90px;
+}
+
+#answerButton {
+	height: 40px;
+	width: 150px;
+	background-color: #00adf3;
+	border: none;
+	color: white;
+	font-family: helvetica, sans-serif;
+	font-size: 12pt;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	border-radius: 3px;
+	margin: 30px 0 20px 0;
+}
