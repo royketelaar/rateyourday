@@ -6,7 +6,7 @@ class Playlist < ActiveRecord::Base
   QUESTIONS_PER_DAY = 3
   
   def self.generate(user_id)
-    random_questions = Question.order("RANDOM()").limit (QUESTIONS_PER_DAY * DAYS)
+    random_questions = Question.order("RANDOM()").limit(QUESTIONS_PER_DAY * DAYS)
 
     current = 0
     random_questions.each do |question| 
