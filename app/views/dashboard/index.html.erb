@@ -1,9 +1,9 @@
 <div class="row">
-	<div class="col9">
-		<h2>Gemiddelden</h2>
+	<div class="col8">
+		<h2>Eigen gemiddelden</h2>
 		<%= pie_chart({"Vitaliteit" => @vitality.average(:answer), "Toewijding" => @dedication.average(:answer), "Absorbtie" => @absorption.average(:answer)}, :id => "main-chart")  %>
 	</div>
-	<div class="col3">
+	<div class="col4">
 		<h2>Rating geschiedenis</h2>
 		<div class="history">
 			<% @answer_by_day.each do |day, answers| %>
@@ -12,7 +12,6 @@
 				<div class="historical_answers">
 				<% for answer in answers %>
 					<p><%= Scale.find(Question.find(Playlist.find(answer.playlist_id).question_id).scale_id).scale %>: <%= answer.answer %></p>
-				    
 				<% end %>
 			</div>
 			</div>

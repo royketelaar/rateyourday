@@ -11,7 +11,7 @@ class AnswersController < ApplicationController
     end
     
     if not_answered.empty?
-      redirect_to root_path, :flash => { :error => "De vragen van vandaag zijn allemaal beantwoord" }
+      redirect_to root_path, :flash => { :error => "De stellingen van vandaag zijn allemaal beoordeeld" }
     else
       @playlist_with_question = not_answered.first
       q_id = Playlist.find(@playlist_with_question).question_id
@@ -30,7 +30,9 @@ class AnswersController < ApplicationController
       @playlist = playlist
       @playlist.update_attributes(:answer_id => @answer.id)
     end
-    redirect_to root_path, :flash => { :notice => "De vraag is beantwoord" }
+    
+    redirect_to new_answer_path, :flash => { :notice => "De stelling is beoordeeld" }
+
   end
   
   def show
