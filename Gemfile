@@ -8,6 +8,10 @@ gem 'devise'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 
+group :production, :staging do
+      gem 'rails_12factor'
+end
+
 # Charts
 gem "chartkick"
 
