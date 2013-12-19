@@ -15,6 +15,8 @@ end
 # Charts
 gem "chartkick"
 
+gem 'groupdate'
+
 # i18n
 gem 'rails-i18n', '~> 4.0.0'
 
