@@ -10,10 +10,15 @@
 			<div>
 				<h4><%= day.strftime("%A %d %B") %></h4>
 				<div class="historical_answers">
-				<% for answer in answers %>
-					<p><%= Scale.find(Question.find(Playlist.find(answer.playlist_id).question_id).scale_id).scale %>: <%= answer.answer %></p>
-				<% end %>
-			</div>
+					<div>
+						<% for answer in answers %>
+						<p><%= Scale.find(Question.find(Playlist.find(answer.playlist_id).question_id).scale_id).scale %>: <%= answer.answer %></p>
+						<% end %>
+					</div>
+					<div>
+						<%= image_tag("smileys/#{((answers.map{|m| m.answer.to_f }.sum / answers.map{|m| m.answer.to_f }.count).round)}.png") %>
+					</div>
+				</div>
 			</div>
 			<% end %>
 		</div>
@@ -28,3 +33,4 @@
 	</div>
 </div>
 <div class="row-end">&nbsp;</div>
+

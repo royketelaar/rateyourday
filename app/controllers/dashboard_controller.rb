@@ -17,5 +17,6 @@ class DashboardController < ApplicationController
     @vitality = Answer.all.where(:playlist_id => vitality_playlist)
     @dedication = Answer.all.where(:playlist_id => dedication_playlist)
     @absorption = Answer.all.where(:playlist_id => absorption_playlist)
+  
 	end
 end

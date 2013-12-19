@@ -7,11 +7,11 @@
 				<%= f.range_field :answer, :in => 1..5, :step => '1', :id => 'slider' %>
 				<%= f.hidden_field :playlist_id, value: @playlist_with_question.id.to_i %>
 				<div id="smileys">
-					<%= image_tag("smileys/really_sad.png") %>
-					<%= image_tag("smileys/sad.png") %>
-					<%= image_tag("smileys/normal.png") %>
-					<%= image_tag("smileys/happy.png") %>
-					<%= image_tag("smileys/really_happy.png") %>
+					<%= image_tag("smileys/1.png") %>
+					<%= image_tag("smileys/2.png") %>
+					<%= image_tag("smileys/3.png") %>
+					<%= image_tag("smileys/4.png") %>
+					<%= image_tag("smileys/5.png") %>
 				</div>
 				<div style="text-align:center;">
 					<%= f.submit 'Beantwoorden', :id => 'answerButton'%>

@@ -8,15 +8,15 @@
 .history h4 {
 	font-weight: 300;
 	font-size: 11pt;
-	color: rgb(80, 80, 80);
+	color: white;
 	text-align: center;
-	background-color: rgb(200, 200, 200);
+	background-color: #5385c6;
 	padding: 10px 0px;
 	margin: 0;
 	letter-spacing: 1px;
 }
 
-.history .historical_answers { padding: 5px; background-color: rgb(250, 250, 250);}
+.history .historical_answers { padding: 5px; background-color: white;}
 
 .history p {
 	font-weight: 300;
@@ -26,3 +26,7 @@
 	padding: 5px 0px 3px 20px;
 	margin: 0;
 }
+
+.historical_answers div { display: inline-block; }
+
+.historical_answers div img { margin-left: 80px; }
