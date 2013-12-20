@@ -6,10 +6,6 @@ class AnswersController < ApplicationController
     daily_questions = user_playlist.where(:day => days)
     not_answered = daily_questions.where(:answer_id => nil)
     
-    if user_playlist.blank?
-      Playlist.generate(current_user.id)
-    end
-    
     if not_answered.empty?
       redirect_to root_path, :flash => { :error => "De stellingen van vandaag zijn allemaal beoordeeld" }
     else

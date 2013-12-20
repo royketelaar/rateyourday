@@ -17,6 +17,12 @@ class DashboardController < ApplicationController
     @vitality = Answer.all.where(:playlist_id => vitality_playlist)
     @dedication = Answer.all.where(:playlist_id => dedication_playlist)
     @absorption = Answer.all.where(:playlist_id => absorption_playlist)
-  
+    
+    days = Playlist.count_days(current_user.id) 
+    daily_questions = Playlist.all.where(:user_id => current_user.id).where(:day => days)
+    
+    if daily_questions.empty?
+      Playlist.generate(current_user.id)
+    end
 	end
 end
