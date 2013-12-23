@@ -15,31 +15,35 @@
 	<header>
 		<div class="layout-978">
 			<div class="row">
-				<ul>
-					<div class="col8">
-						<li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
-						<% if user_signed_in? %>
+				<nav id="nav" role="navigation">
+				    <a href="#nav" title="Show navigation">Show navigation</a>
+				    <a href="#" title="Hide navigation">Hide navigation</a>
+				    <ul>
+						<div class="col8">
+					        <li id="logo"><%= link_to 'Rate your workday' ,root_path%></li>
+							<% if user_signed_in? %>
 							<li>
-								<% if notification %><div id="notification"><%= notification %></div><% end %>
+								<% if notification %><div id="notification"><%= notification %></div><% end %>	
 								<%= link_to "Rate!", new_answer_path %>
 							</li>
-						<%end%>
-					</div>
-					<div class="col4">
-						<% if user_signed_in? %>
-							<li id="profile-drop-down"><%= current_user.first_name + " " +current_user.last_name %>
-							<ul class="drop-down">	
-								<li><%= link_to "Mijn profiel", profile_path %></li>
-								<li><%= link_to "Log uit", destroy_user_session_path, :method => :delete %></li>
-							</ul>
-						<% else %>
+							<% end %>
+						</div>
+						<div class="col4">
+							<% if user_signed_in? %>
+							<li>
+					            <a href="/" ><%= current_user.first_name + " " +current_user.last_name %></a>
+					            <ul class="dropdown">
+									<li><%= link_to "Mijn profiel", profile_path %></li>
+									<li><%= link_to "Uitloggen", destroy_user_session_path, :method => :delete %></li>
+					            </ul>
+					        </li>
+							<% else %>
 							<li><%= link_to "Inloggen", new_user_session_path %></li>
 							<li><%= link_to "Registreren", new_user_registration_path%></li>
-						<% end %>
-						</li>
-					</div>
-				</ul>
-			</div>
+							<%end%>
+						</div>
+				    </ul>
+				</nav>
 			<div class="row-end">&nbsp;</div>
 		</div>
 	</header>
