@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 	def index
     playlist = Playlist.all.where(:user_id => current_user.id)
     @answer = Answer.all.where(:playlist_id => playlist).order("created_at DESC")
-    @answer_by_day = @answer.last(6).group_by { |t| t.created_at.beginning_of_day }
+    @answer_by_day = @answer.first(6).group_by { |t| t.created_at.beginning_of_day }
     
     vitality = Question.all.where(:scale_id => 1)
     dedication = Question.all.where(:scale_id => 2)
