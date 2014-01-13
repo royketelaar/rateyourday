@@ -5,11 +5,11 @@ gem 'rails', '4.0.0'
 
 gem 'devise'
 
-# Use sqlite3 as the database for Active Record
+# PostgreSQL database
 gem 'pg'
 
 group :production, :staging do
-      gem 'rails_12factor'
+  gem 'rails_12factor'
 end
 
 # Charts

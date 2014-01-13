@@ -24,5 +24,10 @@ class DashboardController < ApplicationController
     if daily_questions.empty?
       Playlist.generate(current_user.id)
     end
+    
+    def search_on_job(job)
+      User.all.where(:employment => job)
+    end
+
 	end
 end

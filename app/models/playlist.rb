@@ -1,16 +1,20 @@
 class Playlist < ActiveRecord::Base
   
   belongs_to :user
+  has_one :question
+  has_one :answer
   
   DAYS = 9
   QUESTIONS_PER_DAY = 3
+  SEC_TO_DAY = 86400
   
   def self.count_days(user_id)
+    
     current_user = User.find(user_id)
-    begin_date = current_user.created_at.strftime("%d-%m-%Y").to_i
-    end_date = DateTime.now.strftime("%d-%m-%Y").to_i
+    begin_date = current_user.created_at.to_f
+    end_date = DateTime.now.to_f
   
-    (end_date - begin_date)
+    ((end_date - begin_date) / SEC_TO_DAY).round
   end
   
   def self.generate(user_id)
@@ -28,5 +32,5 @@ class Playlist < ActiveRecord::Base
       current += 1.to_f / QUESTIONS_PER_DAY.to_f
     end
   end  
-  
+
 end

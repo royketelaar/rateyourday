@@ -31,11 +31,6 @@ class AnswersController < ApplicationController
 
   end
   
-  def show
-    @answer = Answer.find(params[:id])
-    @question = Question.find(@answer.question_id)
-  end
-  
   def answer_params
     params.require(:answer).permit(:answer, :playlist_id)
   end
