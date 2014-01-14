@@ -9,7 +9,7 @@ module ApplicationHelper
   end
   
   def notification
-    count = Playlist.all.where(:user_id => current_user.id).where(:day => (Playlist.count_days(current_user.id))).where(:answer_id => nil).count
+    count = Playlist_item.all.where(:user_id => current_user.id).where(:day => (Playlist_item.count_days(current_user.id))).where(:answer_id => nil).count
     
     if count == 0
       nil

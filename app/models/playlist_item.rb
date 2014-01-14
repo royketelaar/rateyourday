@@ -1,4 +1,4 @@
-class Playlist < ActiveRecord::Base
+class Playlist_item < ActiveRecord::Base
   
   belongs_to :user
   has_one :question
@@ -20,10 +20,10 @@ class Playlist < ActiveRecord::Base
   def self.generate(user_id)
     random_questions = Question.order("RANDOM()").limit(QUESTIONS_PER_DAY * DAYS)
 
-    current = Playlist.count_days(user_id)
+    current = Playlist_item.count_days(user_id)
     
     random_questions.each do |question| 
-      item = Playlist.new
+      item = Playlist_item.new
       item.day = current.floor
       item.question_id = question.id
       item.user_id = user_id

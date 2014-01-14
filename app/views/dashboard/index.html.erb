@@ -12,7 +12,7 @@
 				<div class="historical_answers">
 					<div>
 						<% for answer in answers %>
-						<p><%= Scale.find(Question.find(Playlist.find(answer.playlist_id).question_id).scale_id).scale %>: <%= answer.answer %></p>
+						<p><%= Scale.find(Question.find(Playlist_item.find(answer.playlist_id).question_id).scale_id).scale %>: <%= answer.answer %></p>
 						<% end %>
 					</div>
 					<div>
